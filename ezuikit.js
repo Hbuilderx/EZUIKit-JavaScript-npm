@@ -29,34 +29,37 @@
         isReady = true;
       }
     }
-
-    if (!isReady) {
-      var oJs = document.createElement("script");
-      oJs.setAttribute("src", filepath);
-      oJs.onload = callback;
-      document.getElementsByTagName("head")[0].appendChild(oJs);
-    }
+    var oJs = document.createElement("script");
+    oJs.setAttribute("src", filepath);
+    oJs.onload = callback;
+    document.getElementsByTagName("head")[0].appendChild(oJs);
+    // if (!isReady) {
+    //   var oJs = document.createElement("script");
+    //   oJs.setAttribute("src", filepath);
+    //   oJs.onload = callback;
+    //   document.getElementsByTagName("head")[0].appendChild(oJs);
+    // }
   } // 加载css
 
 
   function addCss(filepath, callback) {
-    var headerLink = document.getElementsByTagName('head')[0].getElementsByTagName("link");
-    var isReady = false;
-
-    for (var i = 0; i < headerLink.length; i++) {
-      if (headerLink[i].getAttribute("href") == filepath) {
-        isReady = true;
-      }
-    }
-
-    if (!isReady) {
-      var oJs = document.createElement('link');
-      oJs.rel = 'stylesheet';
-      oJs.type = 'text/css';
-      oJs.href = filepath;
-      oJs.onload = callback;
-      document.getElementsByTagName("head")[0].appendChild(oJs);
-    }
+    // var headerLink = document.getElementsByTagName('head')[0].getElementsByTagName("link");
+    // var isReady = false;
+    //
+    // for (var i = 0; i < headerLink.length; i++) {
+    //   if (headerLink[i].getAttribute("href") == filepath) {
+    //     isReady = true;
+    //   }
+    // }
+    //
+    // if (!isReady) {
+    //   var oJs = document.createElement('link');
+    //   oJs.rel = 'stylesheet';
+    //   oJs.type = 'text/css';
+    //   oJs.href = filepath;
+    //   oJs.onload = callback;
+    //   document.getElementsByTagName("head")[0].appendChild(oJs);
+    // }
   } // 通用请求方法
 
 
@@ -114,7 +117,6 @@
     state: {
       countTimer: undefined,
       // countTime 计时器
-      recodeTime: 0,
       // 录音时间
       recodeTimer: undefined,
       //录音时长 计时器
@@ -211,7 +213,7 @@
       switch (_this.opt.template) {
         case 'simple':
           return domain + "/ezopen/h5/iframe?url=" + _this.opt.url + "&autoplay=" + _this.opt.autoplay + "&audio=" + _this.opt.audio + "&accessToken=" + params.accessToken + "&templete=0" + "&id=" + id;
-        // return "https://open.ys7.com/ezopen/h5/iframe?url=" + _this.opt.url + "&autoplay=" + _this.opt.autoplay + "&audio=" + _this.opt.audio + "&accessToken=" + params.accessToken + "&templete=0";
+          // return "https://open.ys7.com/ezopen/h5/iframe?url=" + _this.opt.url + "&autoplay=" + _this.opt.autoplay + "&audio=" + _this.opt.audio + "&accessToken=" + params.accessToken + "&templete=0";
 
         case 'standard':
           return domain + "/ezopen/h5/iframe?url=" + _this.opt.url + "&autoplay=" + _this.opt.autoplay + "&audio=" + _this.opt.audio + "&accessToken=" + params.accessToken + "&templete=1" + "&id=" + id;
@@ -253,8 +255,8 @@
         //   });
         // });
         /**
-        * 渲染header
-        */
+         * 渲染header
+         */
 
         if (matchHeaderOpt().headerContainer) {
           // if (params.header && params.header instanceof Array) {
@@ -806,7 +808,7 @@
               //   }
               //   loading = false;
               // });
-              // time-area 
+              // time-area
 
 
               var timeAreaDOM = document.createElement('div');

@@ -1,11 +1,11 @@
-#  [EZUIKit-JavaScript-npm][ezuikit-js]
+#  [EZUIKit-JavaScript-npm][ezuikit-js][fix]
 >轻应用npm版本，降低接入难度，适配自定义UI，适配主流框架
 
 > 低延时预览，云存储回放，SD卡回放
 
 > 功能API丰富，如：播放控制，音频控制，视频截图，实时获取视频OSDTime，视频录制，设备对讲，电子放大，全屏等
 
-
+> fix 修改了在vue使用中重复加载控制UI不显示问题。
 
 ### 获取ezuikit-js
 
